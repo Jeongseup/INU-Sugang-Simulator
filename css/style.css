@@ -1,0 +1,618 @@
+@charset "utf-8";
+
+/* Eric meyer reset css */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video
+	{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+caption,legend {
+	display: none
+}
+
+/* HTML5 display-role reset for older browsers */
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section
+	{
+	display: block;
+}
+
+body {
+	color: #333;
+	font-size: 12px;
+	font-family: Dotum, Gulim, '돋움', '굴림', 'arial', sans-serif;
+}
+
+ol,ul {
+	list-style: none;
+}
+
+blockquote,q {
+	quotes: none;
+}
+
+blockquote:before,blockquote:after,q:before,q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+em {
+	font-style: normal;
+}
+
+hr {
+	display: none;
+}
+
+/* project styling setting */
+img,select,textarea {
+	vertical-align: middle;
+}
+
+input[type=text],select,textarea {
+	font-family: 'Dotum', Gulim;
+	font-size: 12px;
+}
+
+/* link styling setting */
+a:link {
+	text-decoration: none;
+	color: #333;
+}
+
+a:visited {
+	text-decoration: none;
+	color: #333;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #333;
+}
+
+a:active {
+	text-decoration: none;
+	color: #333;
+}
+
+.skip {
+	display: block;
+	height: 1px;
+	width: 1px;
+	margin: 0 -1px -1px 0;
+	padding: 0;
+	overflow: hidden;
+	font-size: 0;
+	line-height: 0;
+}
+
+.skip:hover,.skip:active,.skip:focus {
+	width: 100%;
+	height: auto;
+	margin: 0;
+	padding: 5px 0;
+	text-indent: 10px;
+	font-weight: bold;
+	font-size: 12px;
+	color: #333;
+	font-family: Dotum;
+	line-height: 1;
+	text-decoration: none !important;
+	text-align: center;
+}
+
+/* 버튼 */
+.btn_re {
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 5px;
+	margin-right: 1px;
+	font-size: 11px;
+	border: 1px solid #cdcdcd;
+	background-color: #f3f3f3;
+	cursor: pointer;
+}
+
+.btn_sch {
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 8px 5px 0 5px;
+	height: 32px;
+	vertical-align: middle;
+	font-weight: bold;
+	color: #fff !important;
+	background-color: #616161;
+}
+
+.btn_blue {
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 3px;
+	font-weight: bold;
+	font-size: 11px;
+	color: #004096 !important;
+	border: 1px solid #1f5cb7;
+	background-color: #f2f2f2;
+	cursor: pointer;
+}
+
+.btn_grey2 {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 3px;
+    font-weight: bold;
+    font-size: 11px;
+    color: #848484!important;
+    border: 1px solid #848484;
+    background-color: #f2f2f2;
+}
+.btn_red {
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 3px;
+	font-weight: bold;
+	font-size: 11px;
+	color: #ca0000 !important;
+	border: 1px solid #c80606;
+	background-color: #f2f2f2;
+	cursor: pointer;
+}
+
+.btn_regiP {
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 5px;
+	font-weight: bold;
+	font-size: 11px;
+	color: #fff !important;
+	background-color: #306fb6;
+	cursor: pointer;
+}
+
+.btn_scheP {
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 5px;
+	font-weight: bold;
+	font-size: 11px;
+	color: #fff !important;
+	background-color: #d95c00;
+	cursor: pointer;
+}
+/**/
+
+/* 설명문구 */
+.noti {
+	font-size: 11px;
+	font-weight: bold;
+}
+
+.noti span {
+	color: #848484;
+}
+
+.noti em {
+	color: maroon;
+}
+
+.noti_blue {
+	font-size: 11px;
+	color: #1958a8;
+}
+/**/
+
+/* 타이틀 */
+.tit_sub {
+	margin: 20px 0 10px 0;
+	padding-left: 30px;
+	font-weight: bold;
+	font-size: 14px;
+	background: url('../images/bul2.gif') no-repeat 0 center;
+}
+/**/
+
+/* 재수강 타이틀 */
+.tit_re_sub {
+	margin: 20px 0 10px 0;
+	padding-left: 30px;
+	font-weight: bold;
+	font-size: 14px;
+	background: url('../images/bul4.gif') no-repeat 0 center;
+}
+
+/* 로그인 */
+#login {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -190px 0 0 -464px;
+	width: 928px;
+	height: 380px;
+}
+
+#login .tit {
+	margin-bottom: 18px;
+/* 	background: url('../images/line.gif') no-repeat 260px 0; */
+}
+
+#login .tit h1,#login .tit h2 {
+	display: inline-block;
+}
+
+#login .tit h1 {
+	margin: 0 34px 0 38px;
+}
+
+#login .login_con {
+	box-sizing: border-box;
+	padding: 60px 60px 0 60px;
+	width: 928px;
+	height: 306px;
+	background: #094a9a;
+}
+
+#login .login_con h3 {
+	margin-bottom: 34px;
+}
+
+#login .login_con .login_area {
+	position: relative;
+	overflow: hidden;
+}
+
+#login .login_con .login_area>div {
+	float: left;
+}
+
+#login .id_w {
+	position: relative;
+	padding-right: 125px;
+	border-right: 1px solid #46639b;
+}
+
+#login .id_w>p {
+	table-layout: fixed;
+	display: table;
+	margin-bottom: 8px;
+}
+
+#login .id_w>p>label,#login .id_w>p>span {
+	display: table-cell;
+}
+
+#login .id_w>p>label {
+	width: 110px;
+	height: 32px;
+	vertical-align: middle;
+	color: #fff;
+	font-weight: bold;
+}
+
+#login .id_w>p>span input[type=text] {
+	box-sizing: border-box;
+	padding: 0px 5px;
+	width: 184px;
+	height: 32px;
+	border: none;
+	background-color: #e0e0e0;
+}
+
+#login .id_w>p>span input[type=password] {
+	box-sizing: border-box;
+	padding: 0px 5px;
+	width: 184px;
+	height: 32px;
+	border: none;
+	background-color: #e0e0e0;
+}
+
+.btn_login {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 300px;
+	box-sizing: border-box;
+	padding-top: 27px;
+	width: 86px;
+	height: 72px;
+	cursor: pointer;
+}
+
+.btn_login {
+	text-align: center;
+	font-weight: bold;
+	font-size: 13px;
+	border: 1px solid #cfcfcf;
+	background-color: #f6f6f6;
+}
+
+#login .id_w .txt {
+	padding-top: 10px;
+	font-weight: bold;
+	color: #e2e0e1;
+	font-size: 11px;
+}
+
+#login .login_con .login_area>div {
+	overflow: hidden;
+}
+
+#login .login_con .login_area>div ul {
+	float: left;
+	margin-left: 38px;
+}
+
+#login .login_area>div ul.last {
+	margin-left: 10px;
+}
+
+#login .login_area>div ul.last li {
+	width: 150px;
+}
+
+#login .login_area>div ul li {
+	width: 175px;
+}
+
+#login .login_area>div ul li:first-child {
+	margin-bottom: 10px;
+}
+
+.btn_etc {
+	display: block;
+	box-sizing: border-box;
+	padding: 13px 0 0 13px;
+	height: 43px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.btn_etc {
+	border: 3px solid #dfdfdf;
+	background: #f3f3f3;
+}
+
+.btn_etc2 {
+    display: block;
+    box-sizing: border-box;
+    padding: 6px 0 0 8px;
+    height: 43px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn_etc2 {
+    border: 3px solid #dfdfdf;
+    background: #f3f3f3;
+}
+
+/* 팝업 - 유의사항 */
+#noti_pop .tit_pop {
+	overflow: hidden;;
+	background-color: #094a9a;
+}
+
+#noti_pop .tit_pop h1 {
+	float: left;
+	padding: 15px;
+	color: #fff;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+#noti_pop .tit_pop p {
+	float: right;
+	margin-right: 10px;
+}
+
+#noti_pop .con_pop {
+	padding: 20px;
+}
+
+#noti_pop .con_pop .block {
+	margin-bottom: 20px;
+}
+
+#noti_pop .con_pop .block2 {
+	margin-bottom: 20px;
+	line-height: 1.5em;
+}
+
+/* 수강신청화면 */
+.wrap {
+	box-sizing: border-box;
+	padding: 10px;
+    width: 80%;
+	min-width: 1000px;;
+}
+
+.perT {
+	table-layout: fixed;
+	width: 100%;
+	margin-bottom: 8px;
+}
+
+.perT th,.perT td {
+	box-sizing: border-box;
+	padding: 10px 15px;
+	border: 1px solid #cccbc9;
+}
+
+.perT th {
+	text-align: right;
+	font-weight: bold;
+	background-color: #d6dff0;
+}
+
+.perT th.titY {
+	text-align: center;
+	vertical-align: middle;
+	color: #fff;
+	font-size: 14px;
+	background-color: #0f4eab;
+}
+
+.btn_area {
+	margin-bottom: 10px;
+}
+
+.sjt_sch {
+	overflow: hidden;
+	box-sizing: border-box;
+	width: 100%;
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #cbcbcb;
+}
+
+.sjt_sch label,#register .sjt_sch span {
+	float: left;
+}
+
+.sjt_sch label {
+	display: inline-block;
+	font-weight: bold;
+	padding: 8px 10px 0 0;
+}
+
+.sjt_sch span input[type=text] {
+	box-sizing: border-box;
+	padding: 0px 5px;
+	width: 200px;
+	height: 32px;
+	vertical-align: middle;
+	border: 1px solid #cfcfcf;
+}
+
+.sch_areaT {
+	margin-bottom: 20px;
+	height: 324px;
+	overflow-y: scroll;
+	border-bottom: 1px solid #b7b7b7;
+	border-top: 1px solid #b7b7b7;
+}
+
+.dataT {
+	table-layout: fixed;
+	margin-bottom: 25px;
+	width: 100%;
+	font-size: 12px;
+}
+
+.dataT th,.dataT td {
+	box-sizing: border-box;
+	padding: 5px 3px;
+	text-align: center;
+	border: 1px solid #b7b7b7;
+}
+
+.dataT th {
+	font-weight: bold;
+	border-top: 1px solid #3e74ba;
+	background-color: #e0e8f5;
+}
+
+.dataT .first {
+	border-left: none;
+}
+
+.dataT .last {
+	border-right: none;
+}
+
+.dataT .ltf {
+	text-align: left;
+}
+
+.dataT .grey {
+	color: #848484;
+}
+
+.dataT .brown {
+	color: maroon;
+}
+
+.dataT .blue {
+	color: #0082a7;
+}
+
+.dataT .timeInfo {
+	/*  display: inline-block;  */
+	/*     width: 150px; */
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.regi_area .regi_top {
+	margin-bottom: 10px;
+}
+
+.regi_area>div:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.regi_area .regi_top p {
+	float: right;
+}
+
+.regi_area .regi_top p.noti_blue {
+	float: left;
+	padding-top: 7px;
+}
+
+.leftT {
+	float: left;
+	width: 100%;
+	height: 333px;
+	overflow-y: scroll;
+	border-bottom: 1px solid #b7b7b7;
+	border-top: 1px solid #b7b7b7;
+}
+
+.timeT.rightT {
+	float: right;
+	width: 28%;
+}
+
+.timeT {
+	table-layout: fixed;
+	font-size: 12px;
+}
+
+.timeT th,.timeT td {
+	box-sizing: border-box;
+	padding: 0;
+	height: 1px;
+/* 	border: 1px solid #b7b7b7; */
+	text-align: center;
+}
+
+.timeT th {
+	border-top: 1px solid #3d75bb;
+	background-color: #d3d3d3;
+}
+
+.timeT .sun {
+	background-color: #f6e0e0;
+}
+
+.timeT .sat {
+	background-color: #c3ddef;
+}
+
+.timeT .blue2 {
+	background-color: #0082a7;
+}
+
+.timeT .grey2 {
+	background-color: #b7b7b7;
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+    <title>인천대학교 수강신청</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+
+    <script src="./js/netfunnel_euckr.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <script language="javascript">
+        //학번, 비밀번호 확인 및 로그인 함수 호출
+        function checkLogin() {
+            var vChkCmp = "checkOk";
+            var vChkMsg = "";
+
+            if (document.getElementById("stuno").value == "") {
+                vChkCmp = "stuno";
+                vChkMsg = "학번";
+            } else if (document.getElementById("pwd").value == "") {
+                vChkCmp = "pwd";
+                vChkMsg = "비밀번호"
+            }
+
+            if (vChkCmp == "checkOk") goLogin();
+            else {
+                alert(vChkMsg + "을(를) 입력해 주세요.");
+                document.getElementById(vChkCmp).focus();
+                return;
+            }
+        }
+
+        //로그인 체크 페이지 호출
+        function goLogin() {
+            NetFunnel_Action({
+                action_id: "LOGIN"
+            }, function (ev, ret) {
+                document.mainFrom.action = "./jsp/loginCheck.jsp";
+                document.mainFrom.target = "_self";
+                document.mainFrom.submit();
+            });
+        }
+
+        // 각 팝업 페이지 OPEN
+        function goSelectPage(vPageType) {
+            var vUrl = "";
+            var vType = "bannerview_popup";
+            var vStyle =
+                "left=0, top=0, width=700, height=670, scrollbars=yes, menubar=no, toolbar=no, location=no, status=no, resizable=yes";
+
+            if (vPageType == "searchId" || vPageType == "searchPwd") {
+                if (vPageType == "searchId") vUrl = "http://portal.inu.ac.kr:7780/enview/user/help.face?epTicket=LOG";
+                else if (vPageType == "searchPwd") vUrl =
+                    "http://portal.inu.ac.kr:7780/enview/user/pwHelp.face?epTicket=LOG";
+
+                vType = "";
+                vStyle =
+                    "left=30, top=30, width=1024, height=950, scrollbars=no, titlebar=no, menubar=no, Location=no, status=no, resizable=no, fullscreen=no";
+            } else if (vPageType == "info") { // 수강신청 안내
+                vUrl =
+                    "https://www.inu.ac.kr/user/boardList.do?command=view&page=1&boardId=49211&boardSeq=640775&id=inu_070202000000&NewIpsi=&NewEng=&NewComm=&NewEngEn=&NewCommEn=&NewSugi=&NewTriv=";
+            } else if (vPageType == "config") { // 환경설정 및 유의사항
+                vUrl = "./jsp/SukangConfig.jsp";
+            } else if (vPageType == "gSukang") { // 대학원 수강신청
+                vUrl = "https://gsugang.inu.ac.kr/";
+                vType = "new";
+            } else if (vPageType == "notice") { // 교수 자녀간 수강신청
+                vUrl = "./jsp/SukangNotice.jsp";
+            } else if (vPageType == "macro") { // 다중로그인 및 매크로 방지 시행 안내
+                vUrl =
+                    "http://www.inu.ac.kr/user/boardList.do?command=view&page=1&boardId=48510&boardSeq=562120&id=inu_070201000000&NewIpsi=";
+            } else if (vPageType == "mobile") { // 모바일 수강신청 앱 변경 및 매뉴얼
+                vUrl =
+                    "http://www.inu.ac.kr/user/boardList.do?command=view&page=1&boardId=49211&boardSeq=562171&id=inu_070202000000&NewIpsi=";
+            }
+
+            if (vType == "new") window.open(vUrl);
+            else window.open(vUrl, vType, vStyle);
+        }
+
+        // 엔터로 로그인 되도록
+        function onKeyDown() {
+            if (event.keyCode == 13) {
+                checkLogin();
+                return false;
+            }
+
+            return true;
+        }
+
+        //페이지 오픈시 학번입력에 포커스
+        $(document).ready(function () {
+            document.getElementById("stuno").focus();
+        });
+    </script>
+    <style>
+        a:hover {
+            text-decoration: none;
+            color: #e2e0e1;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="login">
+        <div class="tit">
+            <h1>
+                <font size="30" color="black">인천대학교</font>&nbsp;<font size="30" color="#16529B">대학 수강신청 시뮬레이터</font>
+                Course
+                registration
+            </h1>
+        </div>
+        <div class="login_con">
+            <form name="mainFrom" method="post" action="" AutoComplete="off">
+                <h3>
+                    <font size="26" color="white">LOGIN</font>
+                </h3>
+                <div class="login_area">
+                    <div class="id_w">
+                        <p><label for="id">아이디(학번)</label><span><input type="text" value="" name="stuno"
+                                    id="stuno" /></span></p>
+                        <p><label for="pw">포털비밀번호</label><span><input type="password" value="" name="pwd" id="pwd"
+                                    onkeydown="javascript:onKeyDown();" /></span></p>
+                        <a class="btn_login" onclick="javascript:checkLogin();">로그인</a>
+                        <p class="txt">* 아이디(학번) / 비밀번호는 포털시스템과 동일합니다.</p>
+                        <p class="txt"><a style="cursor: pointer;"
+                                onclick="javascript:goSelectPage('searchId');">아이디</a> / <a style="cursor: pointer;"
+                                onclick="javascript:goSelectPage('searchPwd');">비밀번호 찾기</a></p>
+                    </div>
+                    <div>
+                        <ul>
+                            <li><a class="btn_etc" onclick="javascript:goSelectPage('info');">수강신청안내</a></li>
+                            <li><a class="btn_etc" onclick="javascript:goSelectPage('config');">환경설정 및 유의사항</a></li>
+                        </ul>
+                        <ul class="last">
+                            <li><a class="btn_etc" onclick="javascript:goSelectPage('gSukang');">대학원 수강신청</a></li>
+                            <li><a class="btn_etc2" onclick="javascript:goSelectPage('notice');">교수-자녀간 수강신청<br>
+                                    <center>[사전신고 안내]</center>
+                                    </사전신고></br>
+                                </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <br></br><br></br>
+                <a style="cursor: pointer;" onclick="javascript:goSelectPage('macro');">
+                    <font color="blue">* 다중로그인 및 매크로 방지 시행 안내(2020-1학기 부터 적용)</font>
+                </a>
+                <p>&nbsp;</p>
+                <a style="cursor: pointer;" onclick="javascript:goSelectPage('mobile');">
+                    <font color="blue">* 모바일 수강신청 앱 변경 및 매뉴얼(2020-1학기 변경)</font>
+                </a>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
